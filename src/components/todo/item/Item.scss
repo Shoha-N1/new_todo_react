@@ -10,7 +10,6 @@
 .todo-checkbox input:checked + label {
   text-decoration: line-through;
 }
-
 .row > *
 
 :root {
@@ -9461,5 +9460,7 @@
       display: none !important;
     }
   }
-  /*# sourceMappingURL=bootstrap.min.css.map */
   
+  .bg-inp {
+    background-color: #6e6eed;
+  }

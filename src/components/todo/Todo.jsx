@@ -86,7 +86,6 @@ export default function Todo() {
             ClearAll
           </button>
           </div>
-
         </form>
         <div>
           {todos.map((todo) => (
