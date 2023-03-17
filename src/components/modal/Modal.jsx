@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./Modal.scss"
 
-export default function Modal(onDelete) {
+export default function Modal() {
     const [openModal, setOpenModal] = useState(false);
   
     const ModalClick = () => {
