@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import "./Modal.scss"
 
-export default function Modal() {
+export default function Modal(onDelete) {
     const [openModal, setOpenModal] = useState(false);
   
     const ModalClick = () => {
       setOpenModal(!openModal);
     };
+
+
   
     return (
       <div>
@@ -15,7 +17,7 @@ export default function Modal() {
           <div className="modal-main">
             <div className="modal__content">
               <h2>Are you sure?</h2>
-              <button className="close-mod" onClick={ModalClick}>
+              <button className="close-mod" onDelete>
                 Yes
               </button>
               <button className="close-mod" onClick={ModalClick}>

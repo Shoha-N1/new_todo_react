@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "../modal/Modal";
 import Item from "./item/Item";
 
 export default function Todo() {
@@ -47,6 +48,7 @@ export default function Todo() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }
 
+
   function handleClearAll(id) {
     setTodos([]);
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -82,14 +84,30 @@ export default function Todo() {
           </div>
         </div>
 
+      
         <button className="btn btn-primary w-100 ml-1" onClick={() => handleClearAll(todos)} type="button">
             ClearAll
           </button>
           </div>
         </form>
+
         <div>
           {todos.map((todo) => (
             <Item
+              onDelete={() => handleDelete(todo.id)}
+              key={todo.id}
+              id={todo.id}
+              onToggle={() => handleToggle(todo.id)}
+              // onChecked={() => }
+              name={todo.name}
+              isDone={todo.isDone}
+              dueDate={todo.dueDate}
+            />
+          ))}
+        </div>
+        <div>
+          {todos.map((todo) => (
+            <Modal
               onDelete={() => handleDelete(todo.id)}
               key={todo.id}
               id={todo.id}
